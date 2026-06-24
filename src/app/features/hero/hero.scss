@@ -1,0 +1,125 @@
+.hero {
+  padding: 72px 32px 64px;
+  border-bottom: 0.5px solid var(--color-border);
+
+  &__eyebrow {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    color: var(--color-accent);
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    &::before {
+      content: '';
+      display: inline-block;
+      width: 20px;
+      height: 0.5px;
+      background: var(--color-accent);
+    }
+  }
+
+  &__title {
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    margin-bottom: 20px;
+  }
+
+  &__accent {
+    color: var(--color-accent);
+  }
+
+  &__subtitle {
+    font-family: var(--font-mono);
+    font-size: 14px;
+    color: var(--color-text-muted);
+    margin-bottom: 24px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+
+  &__cursor {
+    display: inline-block;
+    width: 9px;
+    height: 16px;
+    background: var(--color-accent);
+    animation: blink 1s step-end infinite;
+    vertical-align: -3px;
+    border-radius: 1px;
+  }
+
+  &__desc {
+    font-size: 16px;
+    color: var(--color-text-secondary);
+    max-width: 480px;
+    line-height: 1.7;
+    margin-bottom: 36px;
+  }
+
+  &__actions {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 40px;
+  }
+
+  &__pills {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+}
+
+.btn-primary {
+  background: var(--color-accent);
+  color: var(--color-bg);
+  border: none;
+  padding: 11px 24px;
+  border-radius: 8px;
+  font-family: var(--font-sans);
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: opacity 0.2s;
+
+  &:hover { opacity: 0.85; }
+}
+
+.btn-ghost {
+  background: transparent;
+  color: var(--color-text-secondary);
+  border: 0.5px solid var(--color-border);
+  padding: 11px 24px;
+  border-radius: 8px;
+  font-family: var(--font-sans);
+  font-size: 14px;
+  cursor: pointer;
+  transition: border-color 0.2s, color 0.2s;
+
+  &:hover {
+    border-color: var(--color-text-secondary);
+    color: var(--color-text-primary);
+  }
+}
+
+.pill {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  background: #ffffff08;
+  border: 0.5px solid #ffffff15;
+  color: var(--color-text-secondary);
+  padding: 5px 12px;
+  border-radius: 99px;
+
+  &--angular { color: #f05454; border-color: #f0545430; background: #f0545410; }
+  &--ts { color: #3178c6; border-color: #3178c630; background: #3178c610; }
+  &--scss { color: #cd6799; border-color: #cd679930; background: #cd679910; }
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}

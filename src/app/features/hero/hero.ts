@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, OnDestroy, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-hero',
@@ -6,6 +6,24 @@ import { Component } from '@angular/core';
   templateUrl: './hero.html',
   styleUrl: './hero.scss',
 })
-export class Hero {
+export default class HeroComponent implements OnInit, OnDestroy {
+  typedText = '';
+  private fullText = 'ng generate component portfolio';
+  private index = 0;
+  private interval: any;
 
+  ngOnInit() {
+    this.interval = setInterval(() => {
+      if (this.index < this.fullText.length) {
+        this.typedText += this.fullText[this.index];
+        this.index++;
+      } else {
+        clearInterval(this.interval);
+      }
+    }, 60);
+  }
+
+  ngOnDestroy() {
+    clearInterval(this.interval);
+  }
 }
