@@ -6,6 +6,12 @@ import { Component } from '@angular/core';
   templateUrl: './nav.html',
   styleUrl: './nav.scss',
 })
-export class Nav {
+export class NavComponent {
+
+  links = [
+    { label: 'proyectos', anchor: '#projects' },
+    { label: 'sobre mí', anchor: '#about' },
+    { label: 'contacto', anchor: '#contact' }
+  ];
 
 }
