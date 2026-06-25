@@ -1,1 +1,51 @@
-<p>about works!</p>
+<section class="about" id="about">
+  <div class="about__layout">
+
+    <div class="about__left">
+      <div class="about__label">sobre mí</div>
+
+      <h2 class="about__title">
+        Desarrollo interfaces,<br>
+        pero también <span class="about__accent">las diseño.</span>
+      </h2>
+
+      <p class="about__desc">
+        Soy desarrolladora frontend junior graduada en DAW. He realizado prácticas en
+        <strong>Disid</strong>, donde desarrollé aplicaciones reales con Angular y TypeScript,
+        consumí APIs REST y trabajé con equipos frontend y backend bajo metodologías ágiles.
+      </p>
+
+      <p class="about__desc">
+        Tengo formación en diseño 3D y edición de vídeo, lo que me da una perspectiva
+        diferente como desarrolladora — entiendo tanto el código como la experiencia visual.
+      </p>
+
+      <div class="about__links">
+        <a class="btn-primary" href="mailto:raquelbarranco02@gmail.com">contactar</a>
+        <a class="btn-ghost" href="/assets/cv.pdf" target="_blank">descargar cv</a>
+      </div>
+    </div>
+
+    <div class="about__right">
+      <div class="about__label">experiencia</div>
+
+      @for (exp of experience; track exp.company) {
+        <div class="about__exp">
+          <div class="about__exp-header">
+            <div>
+              <p class="about__exp-role">{{ exp.role }}</p>
+              <p class="about__exp-company">{{ exp.company }}</p>
+            </div>
+            <span class="about__exp-period">{{ exp.period }}</span>
+          </div>
+          <ul class="about__exp-items">
+            @for (item of exp.items; track item) {
+              <li>{{ item }}</li>
+            }
+          </ul>
+        </div>
+      }
+    </div>
+
+  </div>
+</section>
