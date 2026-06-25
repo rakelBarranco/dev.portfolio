@@ -1,1 +1,36 @@
-<p>contact works!</p>
+<section class="contact" id="contact">
+  <div class="contact__layout">
+
+    <div class="contact__left">
+      <div class="contact__label">contacto</div>
+
+      <h2 class="contact__title">
+        ¿Hablamos?
+      </h2>
+
+      <p class="contact__desc">
+        Estoy buscando mi primera oportunidad laboral. Si tienes un proyecto
+        interesante o una posición que pueda encajar, escríbeme.
+      </p>
+
+      <a class="btn-primary" href="mailto:raquelbarranco02@gmail.com">
+        enviar email
+      </a>
+    </div>
+
+    <div class="contact__right">
+      <div class="contact__label">enlaces</div>
+
+      @for (link of links; track link.label) {
+        <a class="contact__link" [href]="link.url" target="_blank">
+          <div class="contact__link-info">
+            <span class="contact__link-label">{{ link.label }}</span>
+            <span class="contact__link-tag">{{ link.tag }}</span>
+          </div>
+          <span class="contact__link-arrow">↗</span>
+        </a>
+      }
+    </div>
+
+  </div>
+</section>
