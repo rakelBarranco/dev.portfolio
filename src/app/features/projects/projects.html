@@ -1,1 +1,19 @@
-<p>projects works!</p>
+<section class="projects" id="projects">
+  <div class="projects__label">proyectos</div>
+
+  <div class="projects__grid">
+    @for (project of projects; track project.id) {
+      <a class="card" [class.card--featured]="project.featured" [routerLink]="['/projects', project.id]">
+        <div class="card__tag">{{ project.tag }}</div>
+        <h3 class="card__title">{{ project.title }}</h3>
+        <p class="card__desc">{{ project.desc }}</p>
+        <div class="card__chips">
+          @for (chip of project.chips; track chip) {
+            <span class="chip">{{ chip }}</span>
+          }
+        </div>
+        <span class="card__arrow">↗</span>
+      </a>
+    }
+  </div>
+</section>

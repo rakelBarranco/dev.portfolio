@@ -1,12 +1,35 @@
 .hero {
-  padding: 72px 32px 64px;
+  padding: 72px 80px 64px;
   border-bottom: 0.5px solid var(--color-border);
+  position: relative;
+
+  &__layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    align-items: start;
+    position: relative;
+  }
+
+  &__left {
+    position: relative;
+    z-index: 1;
+  }
+
+  &__canvas {
+    width: 100%;
+    height: 100%;
+    min-height: 500px;
+    pointer-events: none;
+    opacity: 1;
+    z-index: 0;
+  }
 
   &__eyebrow {
     font-family: var(--font-mono);
-    font-size: 12px;
+    font-size: 13px;
     color: var(--color-accent);
-    margin-bottom: 20px;
+    margin-bottom: 24px;
     display: flex;
     align-items: center;
     gap: 8px;
@@ -21,10 +44,10 @@
   }
 
   &__title {
-    font-size: 48px;
+    font-size: 76px;
     font-weight: 700;
-    line-height: 1.1;
-    letter-spacing: -0.02em;
+    line-height: 1.0;
+    letter-spacing: -0.03em;
     margin-bottom: 20px;
   }
 
@@ -34,7 +57,7 @@
 
   &__subtitle {
     font-family: var(--font-mono);
-    font-size: 14px;
+    font-size: 15px;
     color: var(--color-text-muted);
     margin-bottom: 24px;
     display: flex;
@@ -45,7 +68,7 @@
   &__cursor {
     display: inline-block;
     width: 9px;
-    height: 16px;
+    height: 18px;
     background: var(--color-accent);
     animation: blink 1s step-end infinite;
     vertical-align: -3px;
@@ -53,11 +76,16 @@
   }
 
   &__desc {
-    font-size: 16px;
+    font-size: 18px;
     color: var(--color-text-secondary);
-    max-width: 480px;
+    max-width: 500px;
     line-height: 1.7;
     margin-bottom: 36px;
+
+    strong {
+      color: var(--color-text-primary);
+      font-weight: 500;
+    }
   }
 
   &__actions {
@@ -66,10 +94,59 @@
     margin-bottom: 40px;
   }
 
-  &__pills {
+  &__icons {
     display: flex;
-    gap: 8px;
+    gap: 14px;
     flex-wrap: wrap;
+  }
+
+  &__icon-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    opacity: 0;
+    transform: translateY(12px);
+    animation: fadeUp 0.5s forwards;
+
+    @for $i from 1 through 6 {
+      &:nth-child(#{$i}) {
+        animation-delay: #{$i * 0.15}s;
+      }
+    }
+  }
+
+  &__icon-box {
+    width: 52px;
+    height: 52px;
+    border-radius: 12px;
+    background: #1a1825;
+    border: 0.5px solid #a78bfa33;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-mono);
+    font-size: 14px;
+    font-weight: 500;
+    transition: border-color 0.2s, background 0.2s;
+
+    &:hover {
+      border-color: #a78bfa88;
+      background: #a78bfa15;
+    }
+
+    &--angular { color: #f05454; }
+    &--ts      { color: #3178c6; }
+    &--scss    { color: #cd6799; }
+    &--rx      { color: #86efac; }
+    &--ionic   { color: #a78bfa; }
+    &--git     { color: #f97316; font-size: 11px; }
+  }
+
+  &__icon-label {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--color-text-muted);
   }
 }
 
@@ -77,13 +154,14 @@
   background: var(--color-accent);
   color: var(--color-bg);
   border: none;
-  padding: 11px 24px;
+  padding: 12px 26px;
   border-radius: 8px;
   font-family: var(--font-sans);
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 500;
   cursor: pointer;
   transition: opacity 0.2s;
+  display: inline-block;
 
   &:hover { opacity: 0.85; }
 }
@@ -92,12 +170,13 @@
   background: transparent;
   color: var(--color-text-secondary);
   border: 0.5px solid var(--color-border);
-  padding: 11px 24px;
+  padding: 12px 26px;
   border-radius: 8px;
   font-family: var(--font-sans);
-  font-size: 14px;
+  font-size: 15px;
   cursor: pointer;
   transition: border-color 0.2s, color 0.2s;
+  display: inline-block;
 
   &:hover {
     border-color: var(--color-text-secondary);
@@ -105,21 +184,14 @@
   }
 }
 
-.pill {
-  font-family: var(--font-mono);
-  font-size: 11px;
-  background: #ffffff08;
-  border: 0.5px solid #ffffff15;
-  color: var(--color-text-secondary);
-  padding: 5px 12px;
-  border-radius: 99px;
-
-  &--angular { color: #f05454; border-color: #f0545430; background: #f0545410; }
-  &--ts { color: #3178c6; border-color: #3178c630; background: #3178c610; }
-  &--scss { color: #cd6799; border-color: #cd679930; background: #cd679910; }
-}
-
 @keyframes blink {
   0%, 100% { opacity: 1; }
   50% { opacity: 0; }
+}
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
