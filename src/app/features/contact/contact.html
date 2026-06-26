@@ -4,18 +4,39 @@
     <div class="contact__left">
       <div class="contact__label">contacto</div>
 
-      <h2 class="contact__title">
-        ¿Hablamos?
-      </h2>
+      <h2 class="contact__title">¿Hablamos?</h2>
 
       <p class="contact__desc">
         Estoy buscando mi primera oportunidad laboral. Si tienes un proyecto
         interesante o una posición que pueda encajar, escríbeme.
       </p>
 
-      <a class="btn-primary" href="mailto:raquelbarranco02@gmail.com">
-        enviar email
-      </a>
+      @if (sent) {
+        <div class="contact__success">
+          ✓ Mensaje enviado, te responderé pronto.
+        </div>
+      } @else {
+        <div class="contact__form">
+          <div class="contact__field">
+            <label>nombre</label>
+            <input type="text" [(ngModel)]="name" placeholder="Tu nombre" />
+          </div>
+          <div class="contact__field">
+            <label>email</label>
+            <input type="email" [(ngModel)]="email" placeholder="tu@email.com" />
+          </div>
+          <div class="contact__field">
+            <label>mensaje</label>
+            <textarea [(ngModel)]="message" placeholder="Cuéntame..." rows="4"></textarea>
+          </div>
+          <button class="btn-primary" (click)="sendEmail()" [disabled]="sending">
+            {{ sending ? 'enviando...' : 'enviar mensaje' }}
+          </button>
+          @if (error) {
+            <p class="contact__error">Algo salió mal, inténtalo de nuevo.</p>
+          }
+        </div>
+      }
     </div>
 
     <div class="contact__right">
