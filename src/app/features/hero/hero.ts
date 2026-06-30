@@ -13,7 +13,7 @@ export default class HeroComponent implements OnInit, OnDestroy {
   typedText = '';
   private fullText = 'ng generate component portfolio';
   private index = 0;
-  private interval: any;
+  private interval: ReturnType<typeof setInterval> | undefined;
 
   ngOnInit() {
     this.interval = setInterval(() => {

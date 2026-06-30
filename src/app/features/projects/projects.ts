@@ -11,7 +11,7 @@ import {RouterLink} from '@angular/router';
   templateUrl: './projects.html',
   styleUrl: './projects.scss',
 })
-export class Projects {
+export default class ProjectsComponent {
 
   private projectsService = inject(ProjectsService);
   projects: Project[] = this.projectsService.getAll();

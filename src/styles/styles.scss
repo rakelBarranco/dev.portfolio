@@ -35,3 +35,13 @@ a {
   text-decoration: none;
   color: inherit;
 }
+
+// Breakpoints de referencia: tablet 768px, mobile 480px
+
+@media (max-width: 768px) {
+  .btn-primary,
+  .btn-ghost {
+    width: 100%;
+    text-align: center;
+  }
+}

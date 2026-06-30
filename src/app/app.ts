@@ -9,5 +9,5 @@ import {NavComponent} from './shared/components/nav/nav';
   styleUrl: './app.scss'
 })
 export class App {
-  protected readonly title = signal('dev.portfolio');
+
 }

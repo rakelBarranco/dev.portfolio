@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import HeroComponent from '../hero/hero';
-import {Projects} from '../projects/projects';
+import ProjectsComponent from '../projects/projects';
 import AboutComponent from '../about/about';
 import ContactComponent from '../contact/contact';
 
@@ -8,7 +8,7 @@ import ContactComponent from '../contact/contact';
   selector: 'app-home',
   imports: [
     HeroComponent,
-    Projects,
+    ProjectsComponent,
     AboutComponent,
     ContactComponent
   ],

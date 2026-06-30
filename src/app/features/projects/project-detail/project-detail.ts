@@ -13,7 +13,7 @@ import AnimatedCanvasComponent from '../../../shared/components/animated-canvas/
   templateUrl: './project-detail.html',
   styleUrl: './project-detail.scss',
 })
-export default class ProjectDetail {
+export default class ProjectDetailComponent {
 
   private route = inject(ActivatedRoute);
   private projectsService = inject(ProjectsService);

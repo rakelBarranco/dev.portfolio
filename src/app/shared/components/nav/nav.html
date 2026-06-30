@@ -1,5 +1,5 @@
 <nav class="nav">
-  <span class="nav__logo">&#64;RaquelBarranco</span>
+  <a class="nav__logo" routerLink="/">&#64;RaquelBarranco</a>
 
   <ul class="nav__links">
     @for (link of links; track link.anchor) {
@@ -8,4 +8,19 @@
   </ul>
 
   <a class="nav__cta" href="/CV_Raquel.pdf" target="_blank">ver cv</a>
+
+  <button class="nav__burger" (click)="toggleMenu()" [class.nav__burger--open]="menuOpen">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+
+  @if (menuOpen) {
+    <div class="nav__mobile-menu">
+      @for (link of links; track link.anchor) {
+        <a [href]="link.anchor" (click)="closeMenu()">{{ link.label }}</a>
+      }
+      <a href="/CV_Raquel.pdf" target="_blank" (click)="closeMenu()">ver cv</a>
+    </div>
+  }
 </nav>

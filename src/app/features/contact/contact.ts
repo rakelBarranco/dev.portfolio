@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import emailjs from '@emailjs/browser';
 import {FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators} from '@angular/forms';
+import {environment} from '../../../environments/enviroment';
 
 @Component({
   selector: 'app-contact',
@@ -56,14 +57,14 @@ export default class ContactComponent {
 
     try {
       await emailjs.send(
-        'service_c6pwbkd',
-        'template_bgz8woi',
+        environment.emailjs.serviceId,
+        environment.emailjs.templateId,
         {
           from_name: this.name?.value,
           from_email: this.email?.value,
           message: this.message?.value
         },
-        'k4dvprHjT95McH4dx'
+        environment.emailjs.publicKey
       );
       this.sent = true;
       this.contactForm.reset();

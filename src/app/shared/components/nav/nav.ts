@@ -1,12 +1,16 @@
 import { Component } from '@angular/core';
+import {RouterLink} from '@angular/router';
 
 @Component({
   selector: 'app-nav',
-  imports: [],
+  imports: [
+    RouterLink
+  ],
   templateUrl: './nav.html',
   styleUrl: './nav.scss',
 })
 export class NavComponent {
+  menuOpen = false;
 
   links = [
     { label: 'proyectos', anchor: '#projects' },
@@ -14,4 +18,11 @@ export class NavComponent {
     { label: 'contacto', anchor: '#contact' }
   ];
 
+  toggleMenu() {
+    this.menuOpen = !this.menuOpen;
+  }
+
+  closeMenu() {
+    this.menuOpen = false;
+  }
 }

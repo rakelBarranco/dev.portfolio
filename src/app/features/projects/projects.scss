@@ -97,3 +97,22 @@
   padding: 4px 10px;
   border-radius: 4px;
 }
+
+@media (max-width: 768px) {
+  .projects {
+    padding: 48px 24px;
+  }
+
+  .projects__grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .card {
+    padding: 22px;
+  }
+
+  .card__title {
+    font-size: 18px;
+  }
+}

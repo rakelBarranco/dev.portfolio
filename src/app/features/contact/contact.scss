@@ -182,3 +182,27 @@
   color: #f05454;
   margin-top: 8px;
 }
+
+@media (max-width: 768px) {
+  .contact {
+    padding: 48px 24px;
+  }
+
+  .contact__layout {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+
+  .contact__title {
+    font-size: 36px;
+  }
+
+  .contact__desc {
+    font-size: 16px;
+    max-width: 100%;
+  }
+
+  .contact__link-label {
+    font-size: 16px;
+  }
+}

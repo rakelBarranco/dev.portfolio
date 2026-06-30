@@ -226,3 +226,39 @@
     color: var(--color-text-primary);
   }
 }
+
+@media (max-width: 768px) {
+  .about {
+    padding: 48px 24px;
+  }
+
+  .about__layout {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+
+  .about__title {
+    font-size: 30px;
+  }
+
+  .about__desc {
+    font-size: 16px;
+  }
+
+  .about__exp-header {
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .about__links {
+    flex-direction: column;
+  }
+
+  .about__recommendation {
+    padding: 18px;
+  }
+
+  .about__rec-quote {
+    font-size: 15px;
+  }
+}

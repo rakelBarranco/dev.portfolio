@@ -35,7 +35,7 @@ export default class AboutComponent {
 
   recommendation = {
     quote: 'Estoy seguro de que va a ser una pieza clave en cualquier equipo de desarrollo en el que entre. La recomiendo totalmente y sé que le va a ir genial.',
-    author: 'Carlos Bayarri Cebrecos ',
+    author: 'Carlos Bayarri Cebrecos',
     role: 'Head of Frontend, Disid',
     fullText: `Quiero recomendar a Raquel Barranco, que ha estado estos últimos meses conmigo en un programa de prácticas en la empresa. Durante este tiempo, he sido el encargado de su formación y puedo decir que ha demostrado que le encanta la programación frontend, que tiene muchísimas ganas de aprender y que trabaja súper bien. Cumplió con todas las tareas del plan sin problemas.
 

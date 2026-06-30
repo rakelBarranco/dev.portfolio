@@ -10,7 +10,7 @@ import {Component, Input, OnDestroy, OnInit} from '@angular/core';
 export default class AnimatedCanvasComponent implements OnInit, OnDestroy {
   @Input() canvasId = 'animatedCanvas';
 
-  private animFrame: any;
+  private animFrame: ReturnType<typeof requestAnimationFrame> = 0;
 
   ngOnInit() {
     setTimeout(() => this.animateCanvas(), 0);
