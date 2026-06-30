@@ -1,1 +1,54 @@
-<p>project-detail works!</p>
+@if (project) {
+  <section class="detail">
+    <app-animated-canvas canvasId="detailCanvas" class="detail__canvas"></app-animated-canvas>
+
+    <a class="detail__back" routerLink="/">← volver</a>
+
+    <div class="detail__header">
+      <div class="detail__tag">{{ project.tag }}</div>
+      <h1 class="detail__title">{{ project.title }}</h1>
+
+      @if (project.inProgress) {
+        <span class="detail__status">🚧 En desarrollo</span>
+      }
+
+      <div class="detail__chips">
+        @for (chip of project.chips; track chip) {
+          <span class="chip">{{ chip }}</span>
+        }
+      </div>
+    </div>
+
+    <p class="detail__desc">{{ project.longDesc }}</p>
+
+    @if (project.features) {
+      <div class="detail__features">
+        <h2 class="detail__subtitle">Funcionalidades</h2>
+        <ul>
+          @for (feature of project.features; track feature) {
+            <li>{{ feature }}</li>
+          }
+        </ul>
+      </div>
+    }
+
+    <div class="detail__links">
+      @if (project.repoUrl) {
+        <a class="btn-primary" [href]="project.repoUrl" target="_blank">ver código</a>
+      }
+      @if (project.demoUrl) {
+        <a class="btn-ghost" [href]="project.demoUrl" target="_blank">ver demo</a>
+      }
+      @if (project.inProgress) {
+        <span class="detail__progress-note">
+          Este proyecto está actualmente en desarrollo. Vuelve pronto para verlo terminado.
+        </span>
+      }
+    </div>
+  </section>
+} @else {
+  <section class="detail">
+    <p>Proyecto no encontrado.</p>
+    <a routerLink="/">← volver al inicio</a>
+  </section>
+}
