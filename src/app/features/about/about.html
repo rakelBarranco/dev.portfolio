@@ -21,7 +21,7 @@
       </p>
 
       <div class="about__links">
-        <a class="btn-primary" href="mailto:raquelbarranco02@gmail.com">contactar</a>
+        <a class="btn-primary" href="#contact">contactar</a>
         <a class="btn-ghost" href="/CV_Raquel.pdf" download="CV_Raquel_Barranco.pdf">descargar cv</a>
       </div>
     </div>
@@ -45,6 +45,29 @@
           </ul>
         </div>
       }
+
+      <div class="about__recommendation">
+        <div class="about__rec-quote">
+          "{{ recommendation.quote }}"
+        </div>
+        <div class="about__rec-author">
+          <span class="about__rec-name">{{ recommendation.author }}</span>
+          <span class="about__rec-role">{{ recommendation.role }}</span>
+        </div>
+
+        <button class="about__rec-toggle" (click)="toggleLetter()">
+          {{ showFullLetter ? 'ocultar carta completa' : 'leer carta completa' }}
+        </button>
+
+        @if (showFullLetter) {
+          <div class="about__rec-full">
+            @for (paragraph of recommendation.fullText.split('\n\n'); track paragraph) {
+              <p>{{ paragraph }}</p>
+            }
+          </div>
+        }
+      </div>
+
     </div>
 
   </div>
