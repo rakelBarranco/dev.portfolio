@@ -154,7 +154,7 @@
     }
 
     &.ng-invalid.ng-touched {
-      border-color: #f05454;
+      border-color: var(--color-error);
     }
   }
 }
@@ -162,14 +162,14 @@
 .contact__field-error {
   font-family: var(--font-mono);
   font-size: 12px;
-  color: #f05454;
+  color: var(--color-error);
   margin-top: 4px;
 }
 
 .contact__success {
   font-family: var(--font-mono);
   font-size: 14px;
-  color: #86efac;
+  color: var(--color-success);
   padding: 16px;
   border: 0.5px solid #86efac33;
   border-radius: 8px;
@@ -179,7 +179,7 @@
 .contact__error {
   font-family: var(--font-mono);
   font-size: 13px;
-  color: #f05454;
+  color: var(--color-error);
   margin-top: 8px;
 }
 

@@ -1,7 +1,7 @@
 <section class="contact" id="contact">
   <div class="contact__layout">
 
-    <div class="contact__left">
+    <article class="contact__left">
       <div class="contact__label">contacto</div>
 
       <h2 class="contact__title">¿Hablamos?</h2>
@@ -19,44 +19,44 @@
         <form class="contact__form" [formGroup]="contactForm" (ngSubmit)="sendEmail()">
 
           <div class="contact__field">
-            <label>nombre</label>
-            <input type="text" formControlName="name" placeholder="Tu nombre" />
+            <label for="contact-name">nombre</label>
+            <input id="contact-name" type="text" formControlName="name" placeholder="Tu nombre" />
             @if (name?.invalid && name?.touched) {
               <span class="contact__field-error">
-          @if (name?.errors?.['required']) {
-            El nombre es obligatorio.
-          } @else if (name?.errors?.['minlength']) {
-            Mínimo 2 caracteres.
-          }
-        </span>
+                @if (name?.errors?.['required']) {
+                  El nombre es obligatorio.
+                } @else if (name?.errors?.['minlength']) {
+                  Mínimo 2 caracteres.
+                }
+              </span>
             }
           </div>
 
           <div class="contact__field">
-            <label>email</label>
-            <input type="email" formControlName="email" placeholder="tu@email.com" />
+            <label for="contact-email">email</label>
+            <input id="contact-email" type="email" formControlName="email" placeholder="tu@email.com" />
             @if (email?.invalid && email?.touched) {
               <span class="contact__field-error">
-          @if (email?.errors?.['required']) {
-            El email es obligatorio.
-          } @else if (email?.errors?.['email']) {
-            Introduce un email válido.
-          }
-        </span>
+                @if (email?.errors?.['required']) {
+                  El email es obligatorio.
+                } @else if (email?.errors?.['email']) {
+                  Introduce un email válido.
+                }
+              </span>
             }
           </div>
 
           <div class="contact__field">
-            <label>mensaje</label>
-            <textarea formControlName="message" placeholder="Cuéntame..." rows="4"></textarea>
+            <label for="contact-message">mensaje</label>
+            <textarea id="contact-message" formControlName="message" placeholder="Cuéntame..." rows="4"></textarea>
             @if (message?.invalid && message?.touched) {
               <span class="contact__field-error">
-          @if (message?.errors?.['required']) {
-            El mensaje es obligatorio.
-          } @else if (message?.errors?.['minlength']) {
-            Mínimo 10 caracteres.
-          }
-        </span>
+                @if (message?.errors?.['required']) {
+                  El mensaje es obligatorio.
+                } @else if (message?.errors?.['minlength']) {
+                  Mínimo 10 caracteres.
+                }
+              </span>
             }
           </div>
 
@@ -69,9 +69,9 @@
           }
         </form>
       }
-    </div>
+    </article>
 
-    <div class="contact__right">
+    <aside class="contact__right">
       <div class="contact__label">enlaces</div>
 
       @for (link of links; track link.label) {
@@ -83,11 +83,11 @@
             <span class="contact__link-tag">{{ link.tag }}</span>
           </div>
           <span class="contact__link-arrow">
-      {{ link.url.startsWith('mailto:') ? '✉' : '↗' }}
-    </span>
+            {{ link.url.startsWith('mailto:') ? '✉' : '↗' }}
+          </span>
         </a>
       }
-    </div>
+    </aside>
 
   </div>
 </section>

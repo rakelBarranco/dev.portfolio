@@ -9,7 +9,7 @@
 
   <a class="nav__cta" href="/CV_Raquel.pdf" target="_blank">ver cv</a>
 
-  <button class="nav__burger" (click)="toggleMenu()" [class.nav__burger--open]="menuOpen">
+  <button class="nav__burger" (click)="toggleMenu()" [class.nav__burger--open]="menuOpen" aria-label="Abrir menú de navegación" [attr.aria-expanded]="menuOpen">
     <span></span>
     <span></span>
     <span></span>

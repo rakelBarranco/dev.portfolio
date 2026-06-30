@@ -9,6 +9,18 @@
   --color-accent: #a78bfa;
   --color-border: #ffffff18;
 
+  --color-success: #86efac;
+  --color-error: #f05454;
+  --color-warning: #f5a623;
+
+  --color-angular: #f05454;
+  --color-typescript: #3178c6;
+  --color-scss: #cd6799;
+  --color-javascript: #f7df1e;
+  --color-html: #e34f26;
+  --color-ionic: #a78bfa;
+  --color-git: #f97316;
+
   --font-sans: 'Space Grotesk', sans-serif;
   --font-mono: 'JetBrains Mono', monospace;
 }
@@ -35,8 +47,6 @@ a {
   text-decoration: none;
   color: inherit;
 }
-
-// Breakpoints de referencia: tablet 768px, mobile 480px
 
 @media (max-width: 768px) {
   .btn-primary,

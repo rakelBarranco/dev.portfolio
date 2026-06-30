@@ -136,13 +136,13 @@
       background: #a78bfa15;
     }
 
-    &--angular { color: #f05454; }
-    &--ts      { color: #3178c6; }
-    &--scss    { color: #cd6799; }
-    &--ionic   { color: #a78bfa; }
-    &--git     { color: #f97316; font-size: 11px; }
-    &--js   { color: #f7df1e; }
-    &--html { color: #e34f26; font-size: 11px; }
+    &--angular { color: var(--color-angular); }
+    &--ts      { color: var(--color-typescript); }
+    &--scss    { color: var(--color-scss); }
+    &--ionic   { color: var(--color-ionic); }
+    &--git     { color: var(--color-git); font-size: 11px; }
+    &--js      { color: var(--color-javascript); }
+    &--html    { color: var(--color-html); font-size: 11px; }
   }
 
   &__icon-label {

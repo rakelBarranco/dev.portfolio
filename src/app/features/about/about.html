@@ -1,7 +1,7 @@
 <section class="about" id="about">
   <div class="about__layout">
 
-    <div class="about__left">
+    <article class="about__left">
       <div class="about__label">sobre mí</div>
 
       <h2 class="about__title">
@@ -24,9 +24,9 @@
         <a class="btn-primary" href="#contact">contactar</a>
         <a class="btn-ghost" href="/CV_Raquel.pdf" download="CV_Raquel_Barranco.pdf">descargar cv</a>
       </div>
-    </div>
+    </article>
 
-    <div class="about__right">
+    <aside class="about__right">
       <div class="about__label">experiencia</div>
 
       @for (exp of experience; track exp.company) {
@@ -47,15 +47,15 @@
       }
 
       <div class="about__recommendation">
-        <div class="about__rec-quote">
+        <blockquote class="about__rec-quote">
           "{{ recommendation.quote }}"
-        </div>
+        </blockquote>
         <div class="about__rec-author">
           <span class="about__rec-name">{{ recommendation.author }}</span>
           <span class="about__rec-role">{{ recommendation.role }}</span>
         </div>
 
-        <button class="about__rec-toggle" (click)="toggleLetter()">
+        <button class="about__rec-toggle" (click)="toggleLetter()" [attr.aria-expanded]="showFullLetter">
           {{ showFullLetter ? 'ocultar carta completa' : 'leer carta completa' }}
         </button>
 
@@ -67,8 +67,7 @@
           </div>
         }
       </div>
-
-    </div>
+    </aside>
 
   </div>
 </section>
