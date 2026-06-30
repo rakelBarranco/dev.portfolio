@@ -82,9 +82,11 @@
             <span class="contact__link-label">{{ link.label }}</span>
             <span class="contact__link-tag">{{ link.tag }}</span>
           </div>
-          <span class="contact__link-arrow">
-            {{ link.url.startsWith('mailto:') ? '✉' : '↗' }}
-          </span>
+          <lucide-icon
+            [img]="link.url.startsWith('mailto:') ? Mail : ArrowUpRight"
+            class="contact__link-arrow"
+            [size]="18">
+          </lucide-icon>
         </a>
       }
     </aside>

@@ -1,15 +1,20 @@
 import { Component } from '@angular/core';
 import emailjs from '@emailjs/browser';
-import {FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators} from '@angular/forms';
+import {FormBuilder, FormGroup, ReactiveFormsModule, Validators} from '@angular/forms';
 import {environment} from '../../../environments/enviroment';
+import { LucideAngularModule, ArrowUpRight, Mail } from 'lucide-angular';
 
 @Component({
   selector: 'app-contact',
-  imports: [FormsModule, ReactiveFormsModule],
+  imports: [LucideAngularModule, ReactiveFormsModule],
   templateUrl: './contact.html',
   styleUrl: './contact.scss',
 })
 export default class ContactComponent {
+
+  readonly ArrowUpRight = ArrowUpRight;
+  readonly Mail = Mail;
+
   sending = false;
   sent = false;
   error = false;
