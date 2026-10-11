@@ -1,59 +1,92 @@
-# DevPortfolio
+# Portfolio — Raquel Barranco
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.3.1.
+Portfolio personal desarrollado desde cero con **Angular 20** y **SCSS**, con un diseño propio pensado para no parecer una plantilla. Presenta mi perfil como desarrolladora frontend, mis proyectos y una vía de contacto directa.
 
-## Development server
+🔗 **[Ver portfolio en vivo](https://portfolioraquel-indol.vercel.app)**
 
-To start a local development server, run:
+![Captura del portfolio](./public/screenshot_Portfolio.png)
+
+---
+
+## Características
+
+- **Diseño propio** — identidad visual personalizada (paleta violeta sobre fondo oscuro, tipografía y animaciones a medida), sin plantillas
+- **Animación en Canvas** — fondo de líneas animadas en el hero y en el detalle de proyecto, con un componente reutilizable
+- **Proyectos con detalle** — cada proyecto tiene su propia página con descripción, funcionalidades y enlaces al repositorio y la demo
+- **Carta de recomendación** — testimonio real de las prácticas, con opción de leer la carta completa
+- **Formulario de contacto** — con validación mediante Reactive Forms e integración con EmailJS
+- **Descarga de CV** — en PDF, directamente desde la web
+- **Diseño responsive** — adaptado a móvil, tablet y escritorio, con menú hamburguesa
+- **Despliegue continuo** — cada push a `main` se despliega automáticamente en Vercel
+
+---
+
+## Tecnologías
+
+| Tecnología | Uso |
+|---|---|
+| Angular 20 | Framework principal, con componentes standalone |
+| TypeScript | Tipado estático en todo el proyecto |
+| SCSS | Estilos con variables centralizadas y arquitectura por componente |
+| RxJS | Gestión del flujo del formulario de contacto |
+| Canvas API | Animaciones de fondo |
+| EmailJS | Envío del formulario de contacto sin backend |
+| Vercel | Despliegue y hosting |
+
+---
+
+## Decisiones técnicas
+
+**Componentes standalone sin NgModules.** Todo el proyecto usa la API moderna de Angular (standalone components, `inject()`, signals), que es el estándar actual del framework y reduce el boilerplate.
+
+**Lazy loading de rutas.** La página principal y el detalle de cada proyecto se cargan de forma diferida con `loadComponent`, reduciendo el tamaño del bundle inicial.
+
+**Un componente de animación reutilizable.** La animación de fondo en Canvas vive en un único componente compartido que se usa tanto en el hero como en el detalle de proyecto, en lugar de duplicar la lógica.
+
+**Datos de proyectos centralizados en un servicio.** La información de los proyectos se gestiona desde un `ProjectsService`, de modo que añadir o actualizar un proyecto es un solo cambio en un sitio.
+
+---
+
+## Instalación
+
+Requisitos previos: Node.js 20 o superior y npm.
 
 ```bash
-ng serve
+# Clonar el repositorio
+git clone https://github.com/rakelBarranco/dev.portfolio.git
+cd dev.portfolio
+
+# Instalar dependencias
+npm install
+
+# Arrancar el proyecto
+npm start
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+La aplicación estará disponible en `http://localhost:4200`.
 
-## Code scaffolding
+> El formulario de contacto usa EmailJS. Las credenciales se gestionan en `src/environments/environment.ts`.
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+---
 
-```bash
-ng generate component component-name
+## Estructura del proyecto
+
+```
+src/
+├── app/
+│   ├── core/
+│   │   ├── models/          # Interfaces y tipos compartidos
+│   │   └── services/        # ProjectsService
+│   ├── features/            # Secciones: hero, about, projects, contact, home
+│   └── shared/
+│       └── components/      # Nav y componente de animación reutilizable
+└── environments/            # Configuración (EmailJS)
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+---
 
-```bash
-ng generate --help
-```
+## Autora
 
-## Building
+**Raquel Barranco** — Desarrolladora Frontend
 
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+[Weather App](https://weather-app-raquel.vercel.app) · [LinkedIn](https://www.linkedin.com/in/raquel-barrval-70a9361b5) · [GitHub](https://github.com/rakelBarranco)
