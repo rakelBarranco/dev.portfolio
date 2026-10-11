@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import emailjs from '@emailjs/browser';
 import {FormBuilder, FormGroup, ReactiveFormsModule, Validators} from '@angular/forms';
-import {environment} from '../../../environments/enviroment';
+import { environment } from '../../../environments/environment';
 import { LucideAngularModule, ArrowUpRight, Mail } from 'lucide-angular';
 
 @Component({
