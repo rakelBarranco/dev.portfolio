@@ -29,4 +29,8 @@ export default class HeroComponent implements OnInit, OnDestroy {
   ngOnDestroy() {
     clearInterval(this.interval);
   }
+
+  scrollTo(id: string) {
+    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+  }
 }

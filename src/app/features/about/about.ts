@@ -51,4 +51,8 @@ Estoy seguro de que va a ser una pieza clave en cualquier equipo de desarrollo e
   toggleLetter() {
     this.showFullLetter = !this.showFullLetter;
   }
+
+  scrollTo(id: string) {
+    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+  }
 }

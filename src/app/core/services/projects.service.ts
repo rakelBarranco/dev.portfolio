@@ -27,15 +27,17 @@ export class ProjectsService {
       id: 'weather-app',
       tag: '<app-weatherapp />',
       title: 'Weather App',
-      desc: 'Consulta del tiempo en tiempo real con RxJS y API externa.',
-      longDesc: 'Aplicación que consume una API meteorológica externa para mostrar el clima en tiempo real de cualquier ciudad, con gestión de peticiones HTTP mediante RxJS y manejo de estados de carga y error.',
-      chips: ['Angular', 'RxJS', 'HTTP'],
-      inProgress: true,
+      desc: 'App del tiempo con autocompletado, geolocalización y previsión de 5 días.',
+      longDesc: 'Aplicación del tiempo que consume la API de OpenWeatherMap. Incluye búsqueda de ciudades con autocompletado y debounce mediante RxJS, geolocalización, previsión de 5 días, fondo dinámico según la hora local y animaciones de clima en Canvas. Construida con Angular standalone, signals y Tailwind CSS.',
+      chips: ['Angular', 'TypeScript', 'Tailwind', 'RxJS'],
+      repoUrl: 'https://github.com/rakelBarranco/weather-app',
+      demoUrl: 'https://weather-app-raquel.vercel.app',
       features: [
-        'Consumo de API REST externa',
-        'Manejo de estados de carga y error',
-        'Búsqueda de ciudades en tiempo real',
-        'Diseño adaptado a distintos dispositivos'
+        'Búsqueda con autocompletado y debounce (RxJS)',
+        'Geolocalización y búsqueda por coordenadas',
+        'Previsión de 5 días',
+        'Fondo dinámico y animaciones de clima en Canvas',
+        'Estado reactivo con signals y diseño responsive'
       ]
     },
     {
